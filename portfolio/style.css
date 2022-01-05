@@ -8,8 +8,88 @@
     src: url(assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
+html {
+    scroll-behavior: smooth; 
+}
+
+:root {
+    --black: #000;
+    --gold-color: #bdae82;
+    --white: #fff;
+    --normal-font: 20px;
+}
+
+body {
+    background: var(--black);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.wrapper {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background-image: url(assets/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.logo {
+    background-image: url(assets/svg/logo.svg);
+    height: 40px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.5s;
+}
+
+.logo:hover {
+    filter: invert(26%) sepia(43%) saturate(260%) hue-rotate(7deg) brightness(86%) contrast(80%);
+    cursor: pointer;
+}
+
+nav {
+    margin-left: auto;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    font-family: Inter;
+    font-size: var(--normal-font);
+}
+
+.nav-list li {
+    padding-right: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.4s;
+}
+
+a:hover {
+    color: var(--gold-color);
+}
+
+.language-check {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: var(--normal-font);
+}
+
+.language-check span {
+    color: var(--gold-color);
 }
