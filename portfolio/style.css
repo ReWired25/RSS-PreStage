@@ -385,3 +385,45 @@ textarea {
     text-align: right;
     padding: 60px 225px 40px 0px;
 }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 20px;
+}
+
+.footer-git, .footer-rs {
+    font-family: Inter;
+    font-size: 20px;
+    line-height: 50px;
+    color: var(--white);
+}
+
+.footer-list {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    display: block;
+    background-image: url(assets/svg/footer-inst.svg);
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+.footer-link:hover {
+    filter: invert(26%) sepia(43%) saturate(260%) hue-rotate(7deg) brightness(86%) contrast(80%);
+}
+
+.footer-list li:nth-child(2) a {
+    background-image: url(assets/svg/footer-fb.svg);
+}
+
+.footer-list li:nth-child(3) a {
+    background-image: url(assets/svg/footer-twitter.svg);
+}
+
+.footer-list li:nth-child(4) a {
+    background-image: url(assets/svg/footer-pinterest.svg);
+}
