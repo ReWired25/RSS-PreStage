@@ -121,7 +121,7 @@ h1 {
     padding-bottom: 25px;
 }
 
-.hero-button {
+.gold-button {
     width: 220px;
     height: 55px;
     color: var(--black);
@@ -132,7 +132,103 @@ h1 {
     transition: 0.4s;
 }
 
-.hero-button:hover {
+.gold-button:hover {
     color: var(--white);
     cursor: pointer;
+}
+
+#skills {
+    padding-top: 100px;
+}
+
+.wrapper-head {
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+.section-head {
+    display: block;
+    font-family: Merriweather;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    color: var(--gold-color);
+}
+
+.section-head:before,
+.section-head:after {
+    content: '';
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+    background: var(--gold-color);
+}
+
+.section-head:before {
+    margin-left: -100%;
+    left: -20px;
+}
+
+.section-head:after {
+    margin-right: -100%;
+    right: -20px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    background-position: center top;
+    width: 320px;
+    padding: 100px 20px 8px 20px;
+}
+
+.skill-item:nth-child(1) {
+    background-image: url(assets/svg/skills-camera.svg);
+    background-repeat: no-repeat;
+}
+
+.skill-item:nth-child(2) {
+    background-image: url(assets/svg/skills-video.svg);
+    background-repeat: no-repeat;
+}
+
+.skill-item:nth-child(3) {
+    background-image: url(assets/svg/skills-image.svg);
+    background-repeat: no-repeat;
+}
+
+.skill-item:nth-child(4) {
+    background-image: url(assets/svg/skills-mic.svg);
+    background-repeat: no-repeat;
+}
+
+h3 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: var(--normal-font);
+    line-height: 40px;
+    text-align: center;
+    color: var(--white);
+    padding-bottom: 20px;
+}
+
+.skill-text {
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    color: var(--white);
+}
+
+#portfolio {
+    padding-top: 100px;
 }
