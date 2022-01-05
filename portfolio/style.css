@@ -110,6 +110,7 @@ h1 {
     font-size: 60px;
     color: var(--white);
     line-height: 120px;
+    padding-bottom: 10px;
 }
 
 .hero-text {
@@ -155,7 +156,7 @@ h1 {
 }
 
 #skills {
-    padding-top: 100px;
+    padding: 100px 20px 0px 20px;
 }
 
 .wrapper-head {
@@ -355,7 +356,7 @@ h4 {
     width: 100%;
     border: 2px solid var(--gold-color);
     background: rgba(0, 0, 0, 0.5);
-    padding: 5px 20px;
+    padding: 3px 20px;
     font-family: Inter;
     font-size: var(--normal-font);
     line-height: 40px;
@@ -399,8 +400,17 @@ footer {
     color: var(--white);
 }
 
+.footer-git span {
+    padding-right: 15px;
+}
+
+.footer-rs {
+    padding-left: 15px;
+}
+
 .footer-list {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
