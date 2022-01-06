@@ -1,0 +1,439 @@
+@font-face {
+    font-family: Merriweather;
+    src: url(assets/fonts/Merriweather-Bold.ttf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+:root {
+    --black: #000;
+    --gold-color: #bdae82;
+    --white: #fff;
+    --normal-font: 20px;
+}
+
+body {
+    background: var(--black);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background-image: url(assets/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    padding: 0 20px;
+}
+
+.logo {
+    background-image: url(assets/svg/logo.svg);
+    height: 40px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.5s;
+}
+
+.logo:hover {
+    filter: invert(26%) sepia(43%) saturate(260%) hue-rotate(7deg) brightness(86%) contrast(80%);
+    cursor: pointer;
+}
+
+nav {
+    margin-left: auto;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    font-family: Inter;
+    font-size: var(--normal-font);
+}
+
+.nav-list li {
+    padding-right: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.4s;
+}
+
+a:hover {
+    color: var(--gold-color);
+}
+
+.language-check {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: var(--normal-font);
+}
+
+.language-check span {
+    color: var(--gold-color);
+}
+
+#hero {
+    background-image: url(assets/img/bg.jpg);
+    background-position: center -90px;
+    background-repeat: no-repeat;
+    height: 820px;
+    padding: 0 20px;
+    padding-top: 160px;
+    padding-left: 80px;
+}
+
+h1 {
+    font-family: Merriweather;
+    font-weight: 700;
+    font-size: 60px;
+    color: var(--white);
+    line-height: 120px;
+    padding-bottom: 10px;
+}
+
+.hero-text {
+    font-family: Inter;
+    font-size: var(--normal-font);
+    line-height: 40px;
+    color: var(--white);
+    width: 470px;
+    padding-bottom: 25px;
+}
+
+.gold-button {
+    width: 220px;
+    height: 55px;
+    color: var(--black);
+    background-color: var(--gold-color);
+    font-family: Inter;
+    font-size: var(--normal-font);
+    border-style: none;
+    transition: 0.4s;
+}
+
+.gold-button:hover {
+    color: var(--white);
+    cursor: pointer;
+}
+
+.transparent-button {
+    width: 220px;
+    height: 55px;
+    color: var(--gold-color);
+    background-color: transparent;
+    font-family: Inter;
+    font-size: var(--normal-font);
+    border: 2px solid var(--gold-color);
+    transition: 0.4s;
+    align-items: center;
+}
+
+.transparent-button:hover {
+    color: var(--white);
+    cursor: pointer;
+}
+
+#skills {
+    padding: 100px 20px 0px 20px;
+}
+
+.wrapper-head {
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+.section-head {
+    display: block;
+    font-family: Merriweather;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    color: var(--gold-color);
+}
+
+.section-head:before,
+.section-head:after {
+    content: '';
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+    background: var(--gold-color);
+}
+
+.section-head:before {
+    margin-left: -100%;
+    left: -20px;
+}
+
+.section-head:after {
+    margin-right: -100%;
+    right: -20px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    background-position: center top;
+    width: 320px;
+    padding: 100px 20px 8px 20px;
+}
+
+.skill-item:nth-child(1) {
+    background-image: url(assets/svg/skills-camera.svg);
+    background-repeat: no-repeat;
+}
+
+.skill-item:nth-child(2) {
+    background-image: url(assets/svg/skills-video.svg);
+    background-repeat: no-repeat;
+}
+
+.skill-item:nth-child(3) {
+    background-image: url(assets/svg/skills-image.svg);
+    background-repeat: no-repeat;
+}
+
+.skill-item:nth-child(4) {
+    background-image: url(assets/svg/skills-mic.svg);
+    background-repeat: no-repeat;
+}
+
+h3 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: var(--normal-font);
+    line-height: 40px;
+    text-align: center;
+    color: var(--white);
+    padding-bottom: 20px;
+}
+
+.skill-text {
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    color: var(--white);
+}
+
+#portfolio {
+    padding: 100px 20px 100px 20px;
+}
+
+.portfolio-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding-bottom: 60px;
+}
+
+.portfolio-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+#video {
+    padding: 0 20px 100px 20px;
+}
+
+.video-player {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-button {
+    position: absolute;
+    background-image: url(assets/svg/play_hover.svg);
+    width: 130px;
+    height: 130px;
+    background-color: transparent;
+    border: 0;
+    transition: 0.4s;
+}
+
+.video-button:hover {
+    filter: invert(26%) sepia(43%) saturate(260%) hue-rotate(7deg) brightness(86%) contrast(80%);
+    cursor: pointer;
+}
+
+#price {
+    padding: 0 20px 100px 20px;
+}
+
+h4 {
+    font-family: Merriweather;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 56px;
+    text-align: center;
+    color: var(--white);
+    padding-bottom: 20px;
+}
+
+.price-container {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-item {
+    border: 3px solid var(--gold-color);
+    text-align: center;
+    padding: 43px 115px;
+}
+
+.cost {
+    font-family: Merriweather;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+    color: var(--gold-color);
+    padding-bottom: 20px;
+}
+
+.price-text {
+    display: block;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    color: var(--white);
+}
+
+.price-text:nth-child(7) {
+    padding-bottom: 40px;
+}
+
+#contacts {
+    background-image: url(assets/img/contacts-image.jpg);
+    height: 700px;
+    padding: 0 20px;
+}
+
+.inputs-container {
+    width: 450px;
+    margin-left: auto;
+}
+
+.contacts-input {
+    display: block;
+    width: 100%;
+    border: 2px solid var(--gold-color);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 3px 20px;
+    font-family: Inter;
+    font-size: var(--normal-font);
+    line-height: 40px;
+    color: var(--gold-color);
+    margin-bottom: 20px;
+}
+
+.contacts-input::placeholder {
+    color: var(--gold-color);
+}
+
+.contacts-input:nth-child(3) {
+    margin-bottom: 30px;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.contacts-head {
+    font-family: Merriweather;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 80px;
+    color: var(--gold-color);
+    text-align: right;
+    padding: 60px 225px 40px 0px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 20px;
+}
+
+.footer-git, .footer-rs {
+    font-family: Inter;
+    font-size: 20px;
+    line-height: 50px;
+    color: var(--white);
+}
+
+.footer-git span {
+    padding-right: 15px;
+}
+
+.footer-rs {
+    padding-left: 15px;
+}
+
+.footer-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-link {
+    display: block;
+    background-image: url(assets/svg/footer-inst.svg);
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+.footer-link:hover {
+    filter: invert(26%) sepia(43%) saturate(260%) hue-rotate(7deg) brightness(86%) contrast(80%);
+}
+
+.footer-list li:nth-child(2) a {
+    background-image: url(assets/svg/footer-fb.svg);
+}
+
+.footer-list li:nth-child(3) a {
+    background-image: url(assets/svg/footer-twitter.svg);
+}
+
+.footer-list li:nth-child(4) a {
+    background-image: url(assets/svg/footer-pinterest.svg);
+}
