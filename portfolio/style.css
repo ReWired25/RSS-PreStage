@@ -313,7 +313,7 @@ h4 {
 .price-item {
     border: 3px solid var(--gold-color);
     text-align: center;
-    padding: 43px 115px;
+    padding: 40px 112px;
 }
 
 .cost {
