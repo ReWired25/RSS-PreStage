@@ -89,6 +89,17 @@ header {
     transform: rotate(45deg) translate(-9px, -9px);
 }
 
+.overlay {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    transition: 1s;
+}
+
 nav {
     margin-left: auto;
 }
@@ -496,11 +507,17 @@ footer {
         z-index: 2;
     }
 
+    .burger-menu.open {
+        position: fixed;
+        right: 60px;
+    }
+
     header {
         position: relative;
     }
 
     nav {
+        display: none;
         position: absolute;
         width: 80vw;
         height: 100vh;
@@ -513,6 +530,13 @@ footer {
 
     nav.open {
         left: 20%;
+        z-index: 2;
+        position: fixed;
+    }
+
+    .overlay.open {
+        position: fixed;
+        display: block;
     }
     
     .nav-list {
@@ -524,5 +548,33 @@ footer {
 
     .language-check {
         margin-left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 60px 20px 60px;
+    }
+
+    .language-check {
+        padding-right: 20px;
+    }
+
+    #hero {
+        height: 500px;
+        padding: 78px 0 0 60px;
+    }
+
+    h1 {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 64px;
+        padding-bottom: 20px;
+    }
+
+    .hero-text {
+        line-height: 24px;
+        max-width: 390px;
+        padding-bottom: 60px;
     }
 }
