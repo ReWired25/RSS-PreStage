@@ -1,3 +1,11 @@
+let burgerMenu = document.querySelector('.burger-menu');
+
+burgerMenu.addEventListener('click', toOpen);
+
+function toOpen() {
+    burgerMenu.classList.toggle('open');
+};
+
 console.log(`Выполненная самооценка таска:
 
 1. Вёрстка валидная: +10
