@@ -30,7 +30,7 @@ body {
 }
 
 .wrapper {
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -46,6 +46,7 @@ header {
 }
 
 .logo {
+    display: block;
     background-image: url(assets/svg/logo.svg);
     height: 40px;
     width: 50px;
@@ -99,9 +100,10 @@ a:hover {
     background-position: center -90px;
     background-repeat: no-repeat;
     height: 820px;
-    padding: 0 20px;
-    padding-top: 160px;
-    padding-left: 80px;
+    padding: 160px 20px 0 80px;
+    /* padding: 0 20px; */
+    /* padding-top: 160px;
+    padding-left: 80px; */
 }
 
 h1 {
@@ -118,7 +120,7 @@ h1 {
     font-size: var(--normal-font);
     line-height: 40px;
     color: var(--white);
-    width: 470px;
+    max-width: 470px;
     padding-bottom: 25px;
 }
 
@@ -156,7 +158,7 @@ h1 {
 }
 
 #skills {
-    padding: 100px 20px 0px 20px;
+    padding: 100px 20px 100px 20px;
 }
 
 .wrapper-head {
@@ -248,7 +250,7 @@ h3 {
 }
 
 #portfolio {
-    padding: 100px 20px 100px 20px;
+    padding: 0px 20px 100px 20px;
 }
 
 .portfolio-buttons {
@@ -273,6 +275,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .video-button {
@@ -307,6 +310,8 @@ h4 {
 .price-container {
     display: block;
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-between;
 }
 
@@ -436,4 +441,25 @@ footer {
 
 .footer-list li:nth-child(4) a {
     background-image: url(assets/svg/footer-pinterest.svg);
+}
+
+@media (max-width: 1439px) {
+    .portfolio-photos {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 1410px) {
+    .portfolio-photos {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .price-container {
+        justify-content: space-around;
+    }
+
+    .skills-container {
+        justify-content: space-around;
+    }
 }
