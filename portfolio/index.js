@@ -1,9 +1,12 @@
 let burgerMenu = document.querySelector('.burger-menu');
+let navMenu = document.querySelector('nav');
 
 burgerMenu.addEventListener('click', toOpen);
+navMenu.addEventListener('click', toOpen);
 
 function toOpen() {
     burgerMenu.classList.toggle('open');
+    navMenu.classList.toggle('open');
 };
 
 console.log(`Выполненная самооценка таска:
