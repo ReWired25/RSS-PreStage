@@ -316,6 +316,9 @@ h3 {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-image: url(assets/img/video-player.jpg);
+    background-position: center 0;
+    height: 705px;
 }
 
 .video-button {
@@ -517,6 +520,7 @@ footer {
 
     header {
         position: relative;
+        overflow: hidden;
     }
 
     nav {
@@ -559,6 +563,9 @@ footer {
     header {
         overflow: hidden;
         padding: 20px 60px 20px 60px;
+        background-image: url(assets/img/bg-tablet.jpg);
+        background-repeat: no-repeat;
+        background-position: center 0;
     }
 
     .language-check {
@@ -568,6 +575,9 @@ footer {
     #hero {
         height: 500px;
         padding: 78px 0 0 60px;
+        background-image: url(assets/img/bg-tablet.jpg);
+        background-position: center -90px;
+        background-repeat: no-repeat;
     }
 
     h1 {
@@ -581,5 +591,123 @@ footer {
         line-height: 24px;
         max-width: 390px;
         padding-bottom: 60px;
+    }
+
+    #skills {
+        padding: 80px 20px 80px 20px;
+    }
+
+    .wrapper-head {
+        padding-bottom: 50px;
+    }
+    
+    .section-head {
+        font-size: 32px;
+        line-height: 80px;
+    }
+
+    .skills-container {
+        justify-content: space-evenly;
+    }
+    
+    .skill-item {
+        background-position: center top;
+        width: 300px;
+        padding: 80px 10px 76px 10px;
+    }
+
+    .skill-text {
+        line-height: 22px;
+    }
+
+    #portfolio {
+        padding: 0px 20px 80px 20px;
+    }
+    
+    .portfolio-buttons {
+        flex-wrap: wrap;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: 5px;
+        padding-bottom: 60px;
+    }
+    
+    .portfolio-photos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    #video {
+        padding: 0 0 80px 0;
+    }
+
+    .video-picture {
+        background-size: contain;
+    }
+    
+    .video-player {
+        background-image: url(assets/img/video-player-tablet.jpg);
+        height: 418px;
+    }
+    
+    .video-button {
+        width: 65px;
+        height: 65px;
+        background-size: contain;
+    }
+
+    #price {
+        padding: 0 20px 80px 20px;
+    }
+
+    .price-item {
+        border: 3px solid var(--gold-color);
+        text-align: center;
+        padding: 40px 100px;
+    }
+
+    .price-container {
+        gap: 50px;
+    }
+
+    #contacts {
+        background-image: url(assets/img/contacts-image-tablet.jpg);
+        height: 600px;
+    }
+
+    .contacts-head {
+        font-size: 32px;
+        line-height: 64px;
+        text-align: center;
+        padding: 60px 0px 40px 0px;
+    }
+
+    .inputs-container {
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    .inputs-container button {
+        margin-left: 115px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 20px;
+    }
+
+    .footer-git {
+        padding-bottom: 16px;
+        line-height: 24px;
+    }
+
+    .footer-rs {
+        line-height: 24px;
+        padding-left: 0;
+        padding-bottom: 29px;
     }
 }
