@@ -521,17 +521,21 @@ footer {
     header {
         position: relative;
         overflow: hidden;
+        padding: 20px 60px 20px 60px;
+    }
+
+    .language-check {
+        padding-right: 25px;
     }
 
     nav {
-        /* display: none; */
-        position: absolute;
+        position: fixed;
         width: 80vw;
         height: 100vh;
         left: 100%;
         top: 0;
         background: var(--black);
-        padding: 20% 0px 0px 20%;
+        padding: 17.5% 0px 0px 16%;
         transition: 0.4s;
     }
 
@@ -568,8 +572,12 @@ footer {
         background-position: center 0;
     }
 
+    nav {
+        position: fixed;
+    }
+
     .language-check {
-        padding-right: 20px;
+        padding-right: 25px;
     }
 
     #hero {
@@ -709,5 +717,54 @@ footer {
         line-height: 24px;
         padding-left: 0;
         padding-bottom: 29px;
+    }
+}
+
+@media (max-width: 619px) {
+    nav {
+        width: 100vw;
+    }
+
+    nav.open {
+        left: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 20px 15px 20px 15px;
+        background-position: right 0;
+    }
+
+    #hero {
+        padding: 50px 0 0 15px;
+        background-position: right -90px;
+    }
+
+    .wrapper-head {
+        width: 90%;
+    }
+
+    .portfolio-photos > img {
+        width: 280px;
+    }
+
+    .video-player {
+        height: 418px;
+        background-size: 590px;
+        height: 321px;
+    }
+
+    .price-item {
+        padding: 40px 30px;
+    }
+
+    .inputs-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .inputs-container > button {
+        margin-left: 0;
     }
 }
