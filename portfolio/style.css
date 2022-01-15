@@ -90,8 +90,18 @@ a:hover {
     font-size: var(--normal-font);
 }
 
-.language-check span {
+.language-button-active {
     color: var(--gold-color);
+}
+
+.language-button {
+    color: var(--white);
+    transition: 0.4s;
+}
+
+.language-button:hover {
+    color: var(--gold-color);
+    cursor: pointer;
 }
 
 #hero {
