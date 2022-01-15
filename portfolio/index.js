@@ -1,15 +1,18 @@
 let burgerMenu = document.querySelector('.burger-menu');
 let navMenu = document.querySelector('nav');
 let overlay = document.querySelector('.overlay');
+let langbuttons = document.querySelector('.language-check');
 
 burgerMenu.addEventListener('click', toOpen);
 navMenu.addEventListener('click', toOpen);
 overlay.addEventListener('click', toOpen);
+langbuttons.addEventListener('click', toOpen);
 
 function toOpen() {
     burgerMenu.classList.toggle('open');
     navMenu.classList.toggle('open');
     overlay.classList.toggle('open');
+    langbuttons.classList.toggle('open');
 };
 
 console.log(`Выполненная самооценка таска:

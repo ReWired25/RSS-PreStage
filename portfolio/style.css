@@ -91,7 +91,7 @@ header {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     visibility: hidden;
     opacity: 0;
     top: 0;
@@ -134,8 +134,18 @@ a:hover {
     font-size: var(--normal-font);
 }
 
-.language-check span {
+.language-button-active {
     color: var(--gold-color);
+}
+
+.language-button {
+    color: var(--white);
+    transition: 0.4s;
+}
+
+.language-button:hover {
+    color: var(--gold-color);
+    cursor: pointer;
 }
 
 #hero {
@@ -560,6 +570,10 @@ footer {
 
     .language-check {
         margin-left: auto;
+    }
+
+    .language-check.open {
+        padding-right: 75px;
     }
 }
 
