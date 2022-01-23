@@ -78,6 +78,10 @@ header {
     transition: 0.3s;
 }
 
+.burger-menu:hover .burger-line {
+    background: var(--gold-color);
+}
+
 .burger-menu.open .burger-line:nth-child(1) {
     transform: rotate(-45deg) translate(-9px, 9px);
 }
