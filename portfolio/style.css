@@ -30,11 +30,12 @@ body {
 }
 
 .wrapper {
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 header {
+    position: relative;
     height: 90px;
     display: flex;
     align-items: center;
@@ -46,6 +47,7 @@ header {
 }
 
 .logo {
+    display: block;
     background-image: url(assets/svg/logo.svg);
     height: 40px;
     width: 50px;
@@ -57,6 +59,52 @@ header {
 .logo:hover {
     filter: invert(26%) sepia(43%) saturate(260%) hue-rotate(7deg) brightness(86%) contrast(80%);
     cursor: pointer;
+}
+
+.burger-menu {
+    display: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.burger-line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--white);
+    margin: 10px 0;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.burger-menu:hover .burger-line {
+    background: var(--gold-color);
+}
+
+.burger-menu.open .burger-line:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 9px);
+}
+
+.burger-menu.open .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open .burger-line:nth-child(3) {
+    transform: rotate(45deg) translate(-9px, -9px);
+}
+
+.overlay {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    transition: 0.4s;
 }
 
 nav {
@@ -109,9 +157,7 @@ a:hover {
     background-position: center -90px;
     background-repeat: no-repeat;
     height: 820px;
-    padding: 0 20px;
-    padding-top: 160px;
-    padding-left: 80px;
+    padding: 160px 20px 0 80px;
 }
 
 h1 {
@@ -128,7 +174,7 @@ h1 {
     font-size: var(--normal-font);
     line-height: 40px;
     color: var(--white);
-    width: 470px;
+    max-width: 470px;
     padding-bottom: 25px;
 }
 
@@ -166,7 +212,7 @@ h1 {
 }
 
 #skills {
-    padding: 100px 20px 0px 20px;
+    padding: 100px 20px 100px 20px;
 }
 
 .wrapper-head {
@@ -258,7 +304,7 @@ h3 {
 }
 
 #portfolio {
-    padding: 100px 20px 100px 20px;
+    padding: 0px 20px 100px 20px;
 }
 
 .portfolio-buttons {
@@ -283,6 +329,10 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    background-image: url(assets/img/video-player.jpg);
+    background-position: center 0;
+    height: 705px;
 }
 
 .video-button {
@@ -317,6 +367,8 @@ h4 {
 .price-container {
     display: block;
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-between;
 }
 
@@ -446,4 +498,291 @@ footer {
 
 .footer-list li:nth-child(4) a {
     background-image: url(assets/svg/footer-pinterest.svg);
+}
+
+@media (max-width: 1439px) {
+    .portfolio-photos {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 1410px) {
+    .portfolio-photos {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .price-container {
+        justify-content: space-around;
+    }
+
+    .skills-container {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 800px) {
+    .burger-menu {
+        display: block;
+        z-index: 2;
+    }
+
+    .burger-menu.open {
+        position: fixed;
+        right: 60px;
+    }
+
+    header {
+        position: relative;
+        overflow: hidden;
+        padding: 20px 60px 20px 60px;
+    }
+
+    .language-check {
+        padding-right: 25px;
+    }
+
+    nav {
+        position: fixed;
+        width: 80vw;
+        height: 100vh;
+        left: 100%;
+        top: 0;
+        background: var(--black);
+        padding: 17.5% 0px 0px 16%;
+        transition: 0.4s;
+    }
+
+    nav.open {
+        left: 20%;
+        z-index: 2;
+        position: fixed;
+    }
+
+    .overlay.open {
+        position: fixed;
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        font-size: 35px;
+        line-height: 73px;
+        gap: 16px;
+    }
+
+    .language-check {
+        margin-left: auto;
+    }
+
+    .language-check.open {
+        padding-right: 75px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        overflow: hidden;
+        padding: 20px 60px 20px 60px;
+        background-image: url(assets/img/bg-tablet.jpg);
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+
+    nav {
+        position: fixed;
+    }
+
+    .language-check {
+        padding-right: 25px;
+    }
+
+    #hero {
+        height: 500px;
+        padding: 78px 0 0 60px;
+        background-image: url(assets/img/bg-tablet.jpg);
+        background-position: center -90px;
+        background-repeat: no-repeat;
+    }
+
+    h1 {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 64px;
+        padding-bottom: 20px;
+    }
+
+    .hero-text {
+        line-height: 24px;
+        max-width: 390px;
+        padding-bottom: 60px;
+    }
+
+    #skills {
+        padding: 80px 20px 80px 20px;
+    }
+
+    .wrapper-head {
+        padding-bottom: 50px;
+    }
+    
+    .section-head {
+        font-size: 32px;
+        line-height: 80px;
+    }
+
+    .skills-container {
+        justify-content: space-evenly;
+    }
+    
+    .skill-item {
+        background-position: center top;
+        width: 300px;
+        padding: 80px 10px 76px 10px;
+    }
+
+    .skill-text {
+        line-height: 22px;
+    }
+
+    #portfolio {
+        padding: 0px 20px 80px 20px;
+    }
+    
+    .portfolio-buttons {
+        flex-wrap: wrap;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: 5px;
+        padding-bottom: 60px;
+    }
+    
+    .portfolio-photos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    #video {
+        padding: 0 0 80px 0;
+    }
+
+    .video-picture {
+        background-size: contain;
+    }
+    
+    .video-player {
+        background-image: url(assets/img/video-player-tablet.jpg);
+        height: 418px;
+    }
+    
+    .video-button {
+        width: 65px;
+        height: 65px;
+        background-size: contain;
+    }
+
+    #price {
+        padding: 0 20px 80px 20px;
+    }
+
+    .price-item {
+        border: 3px solid var(--gold-color);
+        text-align: center;
+        padding: 40px 100px;
+    }
+
+    .price-container {
+        gap: 50px;
+    }
+
+    #contacts {
+        background-image: url(assets/img/contacts-image-tablet.jpg);
+        height: 600px;
+    }
+
+    .contacts-head {
+        font-size: 32px;
+        line-height: 64px;
+        text-align: center;
+        padding: 60px 0px 40px 0px;
+    }
+
+    .inputs-container {
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    .inputs-container button {
+        margin-left: 115px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 20px;
+    }
+
+    .footer-git {
+        padding-bottom: 16px;
+        line-height: 24px;
+    }
+
+    .footer-rs {
+        line-height: 24px;
+        padding-left: 0;
+        padding-bottom: 29px;
+    }
+}
+
+@media (max-width: 619px) {
+    nav {
+        width: 100vw;
+    }
+
+    nav.open {
+        left: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 20px 15px 20px 15px;
+        background-position: right 0;
+    }
+
+    #hero {
+        padding: 50px 0 0 15px;
+        background-position: right -90px;
+    }
+
+    .wrapper-head {
+        width: 90%;
+    }
+
+    .portfolio-photos > img {
+        width: 280px;
+    }
+
+    .video-player {
+        height: 418px;
+        background-size: 590px;
+        height: 321px;
+    }
+
+    .price-item {
+        padding: 40px 30px;
+    }
+
+    .inputs-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .inputs-container > button {
+        margin-left: 0;
+    }
 }
