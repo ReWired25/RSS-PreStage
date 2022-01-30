@@ -17,6 +17,10 @@ function translate(lang) {
     langObj.forEach(item => {
         if (translateObj.hasOwnProperty(item.dataset.lang)) {
             item.textContent = translateObj[item.dataset.lang];
+            if (item.placeholder) {
+                item.placeholder = translateObj[item.dataset.lang];
+                item.textContent = '';
+            }
         };
     });
 };
@@ -67,7 +71,7 @@ portfolioButtons.addEventListener('click', () => {
     };
 });
 
-// ***** translate functionals ***** //
+// ***** Translate functional ***** //
 
 let langButtons = document.querySelector('.language-check');
 
@@ -78,7 +82,20 @@ langButtons.addEventListener('click', () => {
     };
 });
 
-//
+// ***** Themes functional ***** //
+
+let moonSun = document.querySelector('.moon-and-sun');
+
+moonSun.addEventListener('click', () => {
+    moonSun.classList.toggle('light');
+    let themeItems = ['body','.logo','.burger-line','.nav-links','nav','.language-check','.language-button','#hero','h1','.hero-text','.gold-button','.transparent-button','.section-head','h3','.skill-text','h4','.cost','.price-text','#contacts','.contacts-input','.contacts-head','.footer-git','.footer-git-link','.footer-rs','.footer-link'];
+    for (let item of themeItems) {
+        let elem = document.querySelectorAll(item);
+        for (let elemItem of elem) {
+            elemItem.classList.toggle('light');
+        };
+    };
+});
 
 
 
