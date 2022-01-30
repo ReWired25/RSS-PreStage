@@ -140,7 +140,7 @@ a:hover {
     padding-right: 30px;
 }
 
-.language-button-active {
+.language-button.active {
     color: var(--gold-color);
 }
 
@@ -405,9 +405,10 @@ h4 {
 }
 
 .price-item {
+    width: 450px;
     border: 3px solid var(--gold-color);
     text-align: center;
-    padding: 40px 112px;
+    padding: 40px 0px;
 }
 
 .cost {
@@ -477,8 +478,7 @@ textarea {
     font-size: 40px;
     line-height: 80px;
     color: var(--gold-color);
-    text-align: right;
-    padding: 60px 225px 40px 0px;
+    padding: 60px 0px 40px 0px;
 }
 
 footer {
@@ -553,7 +553,7 @@ footer {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .burger-menu {
         display: block;
         z-index: 2;
@@ -720,9 +720,10 @@ footer {
     }
 
     .price-item {
+        width: 420px;
         border: 3px solid var(--gold-color);
         text-align: center;
-        padding: 40px 100px;
+        padding: 40px 0px;
     }
 
     .price-container {
@@ -806,6 +807,7 @@ footer {
     }
 
     .price-item {
+        max-width: 420px;
         padding: 40px 30px;
     }
 

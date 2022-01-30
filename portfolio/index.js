@@ -1,3 +1,26 @@
+// ***** General functions and imports ***** //
+
+import i18Obj from './assets/js/translate.js';
+
+function active(item, container) {
+    let stillActive = container.querySelector('.active');
+    if (stillActive !== null) {
+        stillActive.classList.remove('active');
+    };
+    item.classList.add('active');
+};
+
+function translate(lang) {
+    let langObj = document.querySelectorAll('[data-lang]');
+    let translateObj = i18Obj[lang];
+
+    langObj.forEach(item => {
+        if (translateObj.hasOwnProperty(item.dataset.lang)) {
+            item.textContent = translateObj[item.dataset.lang];
+        };
+    });
+};
+
 // ***** Burger menu functional ***** //
 
 let burgerMenu = document.querySelector('.burger-menu');
@@ -33,14 +56,6 @@ preloadPhotos();
 
 // ***** Portfolio functional ***** //
 
-function active(item, container) {
-    let stillActive = container.querySelector('.active');
-    if (stillActive !== null) {
-        stillActive.classList.remove('active');
-    }
-    item.classList.add('active');
-}
-
 let portfolioButtons = document.querySelector('.portfolio-buttons');
 let portfolioImage = document.querySelectorAll('.portfolio-photo');
 
@@ -55,7 +70,18 @@ portfolioButtons.addEventListener('click', () => {
     };
 });
 
+// ***** translate functionals ***** //
 
+let langButtons = document.querySelector('.language-check');
+
+langButtons.addEventListener('click', () => {
+    if (event.target.classList.contains('language-button')) {
+        active(event.target, langButtons);
+        translate(event.target.textContent);
+    };
+});
+
+//
 
 
 
