@@ -14,6 +14,7 @@ html {
 
 :root {
     --black: #000;
+    --matte: #1c1c1c;
     --gold-color: #bdae82;
     --white: #fff;
     --normal-font: 20px;
@@ -136,6 +137,7 @@ a:hover {
     font-family: Inter;
     font-weight: 700;
     font-size: var(--normal-font);
+    padding-right: 30px;
 }
 
 .language-button-active {
@@ -149,6 +151,20 @@ a:hover {
 
 .language-button:hover {
     color: var(--gold-color);
+    cursor: pointer;
+}
+
+.moon-and-sun {
+    background-image: url(assets/svg/carbon_sun.svg);
+    height: 45px;
+    width: 45px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.5s;
+}
+
+.moon-and-sun:hover {
+    filter: invert(26%) sepia(43%) saturate(260%) hue-rotate(7deg) brightness(86%) contrast(80%);
     cursor: pointer;
 }
 
@@ -202,13 +218,21 @@ h1 {
     font-family: Inter;
     font-size: var(--normal-font);
     border: 2px solid var(--gold-color);
-    transition: 0.4s;
+    transition: 0.7s;
     align-items: center;
 }
 
 .transparent-button:hover {
     color: var(--white);
     cursor: pointer;
+}
+
+.transparent-button.active {
+    color: var(--white);
+    background-color: var(--gold-color);
+    border-style: none;
+    transition: 0.7s;
+    /* transform: scale(1.03); */
 }
 
 #skills {
@@ -318,6 +342,14 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+}
+
+.portfolio-photo {
+    transition: 0.7s;
+}
+
+.portfolio-photo:hover {
+    transform: scale(1.07);
 }
 
 #video {
