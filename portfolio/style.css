@@ -36,14 +36,17 @@ body {
 }
 
 header {
-    position: relative;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
     height: 90px;
     display: flex;
     align-items: center;
     color: var(--white);
-    background-image: url(assets/img/bg.jpg);
+    /* background-image: url(assets/img/bg.jpg);
     background-repeat: no-repeat;
-    background-position: center 0;
+    background-position: center 0; */
     padding: 0 20px;
 }
 
@@ -170,10 +173,10 @@ a:hover {
 
 #hero {
     background-image: url(assets/img/bg.jpg);
-    background-position: center -90px;
+    background-position: center 0;
     background-repeat: no-repeat;
     height: 820px;
-    padding: 160px 20px 0 80px;
+    padding: 250px 20px 0 80px;
 }
 
 h1 {
@@ -560,18 +563,13 @@ footer {
     }
 
     .burger-menu.open {
-        position: fixed;
+        /* position: fixed; */
         right: 60px;
     }
 
     header {
-        position: relative;
         overflow: hidden;
         padding: 20px 60px 20px 60px;
-    }
-
-    .language-check {
-        padding-right: 25px;
     }
 
     nav {
@@ -608,33 +606,33 @@ footer {
         margin-left: auto;
     }
 
-    .language-check.open {
-        padding-right: 75px;
+    .moon-and-sun {
+        margin-right: 30px;
     }
+
+    /* .language-check.open {
+        padding-right: 75px;
+    } */
 }
 
 @media (max-width: 768px) {
     header {
         overflow: hidden;
         padding: 20px 60px 20px 60px;
-        background-image: url(assets/img/bg-tablet.jpg);
+        /* background-image: url(assets/img/bg-tablet.jpg);
         background-repeat: no-repeat;
-        background-position: center 0;
+        background-position: center 0; */
     }
 
     nav {
         position: fixed;
     }
 
-    .language-check {
-        padding-right: 25px;
-    }
-
     #hero {
-        height: 500px;
-        padding: 78px 0 0 60px;
+        height: 590px;
+        padding: 168px 0 0 60px;
         background-image: url(assets/img/bg-tablet.jpg);
-        background-position: center -90px;
+        background-position: center 0px;
         background-repeat: no-repeat;
     }
 
@@ -784,12 +782,11 @@ footer {
 @media (max-width: 500px) {
     header {
         padding: 20px 15px 20px 15px;
-        background-position: right 0;
     }
 
     #hero {
-        padding: 50px 0 0 15px;
-        background-position: right -90px;
+        padding: 140px 0 0 15px;
+        background-position: right 0;
     }
 
     .wrapper-head {
