@@ -114,13 +114,13 @@ function changeTheme() {
             elemItem.classList.toggle('light');
         };
     };
-    if (moonSun.classList.contains('light')) {
-        localStorage.setItem('theme', 'light')
-    } else {
-        localStorage.setItem('theme', 'dark');
-    }
-    // moonSun.classList.contains('light') ? localStorage.setItem('theme', 'light') :
-    // localStorage.setItem('theme', 'dark');
+    // if (moonSun.classList.contains('light')) {
+    //     localStorage.setItem('theme', 'light')
+    // } else {
+    //     localStorage.setItem('theme', 'dark');
+    // }
+    moonSun.classList.contains('light') ? localStorage.setItem('theme', 'light') :
+    localStorage.setItem('theme', 'dark');
 }
 
 moonSun.addEventListener('click', changeTheme);

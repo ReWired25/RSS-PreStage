@@ -232,7 +232,7 @@ a:hover {
 }
 
 #hero.light {
-    background-image: url(assets/img/white-bg-25.jpg);
+    background-image: url(assets/img/white-bg.jpg);
 }
 
 h1 {
@@ -607,7 +607,7 @@ h4.light {
 }
 
 #contacts.light {
-    background-image: url(assets/img/contacts-bg-white.jpg);
+    background-image: url(assets/img/contacts-image-white.jpg);
 }
 
 .inputs-container {
@@ -846,6 +846,10 @@ footer {
         background-repeat: no-repeat;
     }
 
+    #hero.light {
+        background-image: url(assets/img/contacts-tablet-white.jpg);
+    }
+
     h1 {
         font-weight: 400;
         font-size: 32px;
@@ -897,6 +901,22 @@ footer {
         gap: 5px;
         padding-bottom: 60px;
     }
+
+    .transparent-button:hover {
+        transform: translatey(-3px);
+    }
+
+    .transparent-button.light:hover {
+        transform: translatey(-3px);
+    }
+
+    .transparent-button.active:hover {
+        transform: scale(1.035);
+    }
+
+    .transparent-button.light.active:hover {
+        transform: scale(1.035);
+    }
     
     .portfolio-photos {
         display: flex;
@@ -943,11 +963,20 @@ footer {
         height: 600px;
     }
 
+    #contacts.light {
+        background-image: url(assets/img/contacts-tablet-white-bg_25.jpg);
+        height: 600px;
+    }
+
     .contacts-head {
         font-size: 32px;
         line-height: 64px;
         text-align: center;
         padding: 60px 0px 40px 0px;
+    }
+
+    .contacts-head.light {
+        color: var(--gold-color);
     }
 
     .inputs-container {
