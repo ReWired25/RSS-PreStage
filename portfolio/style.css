@@ -290,6 +290,7 @@ h1.light {
     background-color: var(--matte);
     color: var(--gold-color);
     transform: scale(1.08);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.7);
 }
 
 #contacts .gold-button.light {
@@ -302,12 +303,14 @@ h1.light {
     background-color: var(--matte);
     color: var(--gold-color);
     transform: scale(1.08);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.7);
 }
 
 #price .gold-button.light:hover {
     background-color: var(--matte);
     color: var(--gold-color);
     transform: scale(1.08);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
 }
 
 .transparent-button {
@@ -325,6 +328,8 @@ h1.light {
 .transparent-button:hover {
     color: var(--white);
     cursor: pointer;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--gold-color);
+	transform: translatey(-8px);
 }
 
 .transparent-button.active {
@@ -332,23 +337,9 @@ h1.light {
     background-color: var(--gold-color);
     border-style: none;
     transition: 0.7s;
+    box-shadow: 0 0 0 0;
     transform: scale(1.035);
 }
-
-/* .transparent-button.light {
-    background: var(--gold-color);
-    color: var(--matte);
-}
-
-.transparent-button.light:hover {
-    color: var(--white);
-    cursor: pointer;
-}
-
-.transparent-button.light.active {
-    background-color: var(--matte);
-    color: var(--gold-color);
-} */
 
 .transparent-button.light {
     color: var(--matte);
@@ -357,10 +348,17 @@ h1.light {
 .transparent-button.light:hover {
     color: var(--gold-color);
     cursor: pointer;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--gold-color);
+	transform: translatey(-8px);
 }
 
 .transparent-button.light.active {
     color: var(--matte);
+}
+
+.transparent-button.light.active:hover {
+    box-shadow: 0 0 0 0;
+    transform: scale(1.035);
 }
 
 /* ///// skills section ///// */
@@ -774,7 +772,6 @@ footer {
     }
 
     .burger-menu.open {
-        /* position: fixed; */
         right: 60px;
     }
 
@@ -829,19 +826,12 @@ footer {
     .moon-and-sun {
         margin-right: 30px;
     }
-
-    /* .language-check.open {
-        padding-right: 75px;
-    } */
 }
 
 @media (max-width: 768px) {
     header {
         overflow: hidden;
         padding: 20px 60px 20px 60px;
-        /* background-image: url(assets/img/bg-tablet.jpg);
-        background-repeat: no-repeat;
-        background-position: center 0; */
     }
 
     nav {
