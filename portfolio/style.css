@@ -192,6 +192,11 @@ a:hover {
     transition: 0.4s;
 }
 
+.language-button.light.active {
+    color: var(--white);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
 .language-button.light:hover {
     color: var(--white);
     text-shadow: 0 0 10px rgba(0, 0, 0, 1);
@@ -227,7 +232,7 @@ a:hover {
 }
 
 #hero.light {
-    background-image: url(assets/img/white-bg-2.jpg);
+    background-image: url(assets/img/white-bg-25.jpg);
 }
 
 h1 {

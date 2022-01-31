@@ -25,6 +25,23 @@ function translate(lang) {
     });
 };
 
+// ***** local storage functional ***** //
+
+function getLocal() {
+    if (localStorage.getItem('language')) {
+        let theme = localStorage.getItem('theme');
+        let lang = localStorage.getItem('language');
+        let activeLang = document.querySelectorAll('.language-button');
+
+        if (theme === 'light') changeTheme();
+        translate(lang);
+        activeLang[0].textContent === lang ? activeLang[0].classList.add('active') :
+        activeLang[1].classList.add('active');
+    };
+};
+
+window.addEventListener('load', getLocal);
+
 // ***** Burger menu functional ***** //
 
 let burgerMenu = document.querySelector('.burger-menu');
@@ -79,6 +96,8 @@ langButtons.addEventListener('click', () => {
     if (event.target.classList.contains('language-button')) {
         active(event.target, langButtons);
         translate(event.target.textContent);
+        let language = event.target.textContent;
+        localStorage.setItem('language', language);
     };
 });
 
@@ -86,7 +105,7 @@ langButtons.addEventListener('click', () => {
 
 let moonSun = document.querySelector('.moon-and-sun');
 
-moonSun.addEventListener('click', () => {
+function changeTheme() {
     moonSun.classList.toggle('light');
     let themeItems = ['body','.logo','.burger-line','.nav-links','nav','.language-check','.language-button','#hero','h1','.hero-text','.gold-button','.transparent-button','.section-head','h3','.skill-text','h4','.cost','.price-text','#contacts','.contacts-input','.contacts-head','.footer-git','.footer-git-link','.footer-rs','.footer-link'];
     for (let item of themeItems) {
@@ -95,7 +114,18 @@ moonSun.addEventListener('click', () => {
             elemItem.classList.toggle('light');
         };
     };
-});
+    if (moonSun.classList.contains('light')) {
+        localStorage.setItem('theme', 'light')
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+    // moonSun.classList.contains('light') ? localStorage.setItem('theme', 'light') :
+    // localStorage.setItem('theme', 'dark');
+}
+
+moonSun.addEventListener('click', changeTheme);
+
+// ***** self-check ***** //
 
 
 
