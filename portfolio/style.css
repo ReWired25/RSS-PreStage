@@ -847,7 +847,7 @@ footer {
     }
 
     #hero.light {
-        background-image: url(assets/img/contacts-tablet-white.jpg);
+        background-image: url(assets/img/white-bg-tablet.jpg);
     }
 
     h1 {
@@ -964,7 +964,7 @@ footer {
     }
 
     #contacts.light {
-        background-image: url(assets/img/contacts-tablet-white-bg_25.jpg);
+        background-image: url(assets/img/contacts-tablet-white.jpg);
         height: 600px;
     }
 
