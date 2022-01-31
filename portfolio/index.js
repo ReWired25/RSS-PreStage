@@ -36,7 +36,7 @@ function getLocal() {
         if (theme === 'light') changeTheme();
         translate(lang);
         activeLang[0].textContent === lang ? activeLang[0].classList.add('active') :
-        activeLang[1].classList.add('active');
+        (activeLang[0].classList.remove('active'), activeLang[1].classList.add('active'));
     };
 };
 
