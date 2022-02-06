@@ -1,0 +1,138 @@
+/* ----------- based normalize, wrapper ----------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ----------- player ----------- */
+
+.player-container {
+    width: 400px;
+    height: 420px;
+    background: rgb(40, 40, 51);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.album-cover {
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: rgb(47, 83, 83);
+}
+
+.info-volume {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0 10px 0;
+}
+
+.info, .volume {
+    width: 25px;
+    height: 25px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(67deg) brightness(104%) contrast(104%);
+    transition: 0.5s;
+}
+
+.info:hover, .volume:hover, .prev-img:hover, .next-img:hover {
+    transform: scale(1.2);
+}
+
+.volume-button {
+    position: relative;
+}
+
+.volume-range {
+    position: absolute;
+    bottom: 50px;
+    left: -50px;
+    appearance: slider-vertical;
+    background-color: rgb(94, 94, 94);
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.band-name {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.song-name {
+    font-size: 19px;
+    color: rgb(190, 190, 190);
+}
+
+.song-bar {
+    width: 300px;
+    height: 5px;
+    background-color: rgb(61, 61, 80);
+    margin: 0px 0px 15px 50px;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.play-img {
+    width: 50px;
+    height: 50px;
+    margin: 0 25px 0 25px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(67deg) brightness(104%) contrast(104%);
+    transition: 0.5s;
+}
+
+.play-img:hover {
+    transform: scale(1.2);
+}
+
+.prev-img,
+.next-img {
+    width: 15px;
+    height: 15px;
+    filter: invert(50%) sepia(100%) saturate(0%) hue-rotate(67deg) brightness(104%) contrast(104%);
+    transition: 0.5s;
+}
+
+/* ----------- footer ----------- */
+
+footer {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 0;
+}
+
+.footer-github, .year {
+    text-decoration: none;
+    color: rgb(138, 204, 39);
+    font-size: 20px;
+}
+
+.logo-school {
+    background-image: url(assets/svg/rs_school_js.svg);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 40px;
+    filter: invert(81%) sepia(20%) saturate(1531%) hue-rotate(32deg) brightness(89%) contrast(92%);
+}
