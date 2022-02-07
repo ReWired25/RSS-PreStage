@@ -8,11 +8,11 @@ const whlung = new Audio('assets/audio/W. H. Lung - Inspiration!.mp3');
 
 const songs = [kasabian, joywave, pumarosa, districts, whlung];
 
-// -------------- images, titles -------------- //
+// ----------- images, titles ------------ //
 
 const covers = ['assets/img/bumblebeee.jpg', 'assets/img/obsession.jpg', 'assets/img/priestess.jpg', 'assets/img/cheap-regrets.jpg', 'assets/img/inspiration.jpg'];
 const bandNames = ['Kasabian', 'Joywave', 'Pumarosa', 'The Districts', 'W. H. Lung'];
-const songNames = ['Bumblebee', 'Obsession', 'Priestess', 'Cheap Regrets', 'Inspiration!'];
+const songNames = ['Bumblebeee', 'Obsession', 'Priestess', 'Cheap Regrets', 'Inspiration!'];
 
 // -------------- functions -------------- // 
 
@@ -39,6 +39,16 @@ function nextSong() {
     album.src = covers[songNumber];
     bandTitle.textContent = bandNames[songNumber];
     songTitle.textContent = songNames[songNumber];
+
+    let fullTime = songs[songNumber].duration;
+    let fullMin = Math.trunc(fullTime / 60);
+    let fullSec = Math.trunc(fullTime % 60);
+    if (fullSec < 10) {
+        durationSpan.innerHTML = `${fullMin}:0${fullSec}`;
+    } else {
+    durationSpan.innerHTML = `${fullMin}:${fullSec}`;
+    }
+
     play(songNumber);
 }
 
@@ -48,6 +58,7 @@ function play() {
         songs[songNumber].play();
         playImg.src = 'assets/svg/pause.svg';
         isPlay = true;
+        songs[songNumber].ontimeupdate = progressUpdate;
     } else if (isPlay === true) {
         songs[songNumber].pause();
         playImg.src = 'assets/svg/play-button-1.svg';
@@ -56,7 +67,33 @@ function play() {
 };
 
 function volumeChange() {
-    songs[songNumber].volume = volume.value / 100;
+    songs.forEach(item => {
+        item.volume = volume.value / 100;
+    });
+}
+
+function infoSong() {
+    infoContainer.classList.toggle('active');
+}
+
+function progressUpdate() {
+    let fullTime = songs[songNumber].duration;
+    let currTime = songs[songNumber].currentTime;
+    progress.value = 100 * currTime / fullTime;
+
+    let currMin = Math.trunc(currTime / 60);
+    let currSec = Math.trunc(currTime % 60);
+    if (currSec < 10) {
+        currentSpan.innerHTML = `${currMin}:0${currSec}`;
+    } else {
+    currentSpan.innerHTML = `${currMin}:${currSec}`;
+    }
+}
+
+function changePlace() {
+    let fullSong  = songs[songNumber].duration;
+    progress.value = (event.offsetX / progress.offsetWidth) * fullSong;
+    songs[songNumber].currentTime = (event.offsetX / progress.offsetWidth) * fullSong;
 }
 
 // -------------- variables, selectors -------------- // 
@@ -72,8 +109,19 @@ const playButton = document.querySelector('.play-button');
 const prevButton = document.querySelector('.prev-button');
 const nextButton = document.querySelector('.next-button');
 const volume = document.querySelector('.volume-range');
+const infoButton = document.querySelector('.info-button');
+const infoContainer = document.querySelector('.info-container');
+const infoCloseButton = document.querySelector('.info-close');
+const progress = document.querySelector('.progress-bar');
+const durationSpan = document.querySelector('.duration');
+const currentSpan = document.querySelector('.current');
 
 playButton.addEventListener('click', play);
 prevButton.addEventListener('click', prevSong);
 nextButton.addEventListener('click', nextSong);
 volume.addEventListener('input', volumeChange);
+infoButton.addEventListener('click', infoSong);
+progress.addEventListener('click', changePlace);
+infoCloseButton.addEventListener('click', infoSong);
+
+// -------------- songs info -------------- //
