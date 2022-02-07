@@ -17,6 +17,7 @@ const songs = [kasabian, joywave, pumarosa, districts, whlung];
 // ----------- images, titles ------------ //
 
 const covers = ['assets/img/bumblebeee.jpg', 'assets/img/obsession.jpg', 'assets/img/priestess.jpg', 'assets/img/cheap-regrets.jpg', 'assets/img/inspiration.jpg'];
+const backImages = ['assets/img/background/kasabianfullhd.jpg','assets/img/background/joywavefullhd.jpg','assets/img/background/pumarosafullhd.jpg','assets/img/background/districtsfullhd.jpg','assets/img/background/whlungfullhd.jpg'];
 const bandNames = ['Kasabian', 'Joywave', 'Pumarosa', 'The Districts', 'W. H. Lung'];
 const songNames = ['Bumblebeee', 'Obsession', 'Priestess', 'Cheap Regrets', 'Inspiration!'];
 
@@ -30,7 +31,7 @@ function prevSong() {
         songNumber = 4;
     };
     album.src = covers[songNumber];
-    backImage.src = covers[songNumber];
+    backImage.src = backImages[songNumber];
     bandTitle.textContent = bandNames[songNumber];
     songTitle.textContent = songNames[songNumber];
     infoText.innerHTML = infoSongs[songNumber];
@@ -45,6 +46,7 @@ function prevSong() {
     durationSpan.innerHTML = `${fullMin}:${fullSec}`;
     }
 
+    songs[songNumber].currentTime = 0;
     play(songNumber);
 }
 
@@ -56,7 +58,7 @@ function nextSong() {
         songNumber = 0;
     }
     album.src = covers[songNumber];
-    backImage.src = covers[songNumber];
+    backImage.src = backImages[songNumber];
     bandTitle.textContent = bandNames[songNumber];
     songTitle.textContent = songNames[songNumber];
     infoText.innerHTML = infoSongs[songNumber];
@@ -71,12 +73,12 @@ function nextSong() {
     durationSpan.innerHTML = `${fullMin}:${fullSec}`;
     }
 
+    songs[songNumber].currentTime = 0;
     play(songNumber);
 }
 
 function play() {
     if (isPlay === false) {
-        songs[songNumber].currentTime = 0;
         songs[songNumber].play();
         playImg.src = 'assets/svg/pause.svg';
         isPlay = true;
