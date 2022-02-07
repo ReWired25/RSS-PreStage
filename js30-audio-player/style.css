@@ -21,6 +21,14 @@
     width: 100%;
 }
 
+@media (max-width: 1200px) {
+    .background-image {
+        position: absolute;
+        height: fit-content;;
+        width: fit-content;
+    }
+}
+
 /* ----------- player ----------- */
 
 .player-container {
