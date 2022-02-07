@@ -1,3 +1,9 @@
+// ------------- imports ------------- //
+
+import {
+    infoSongs, infoSongsLyrics
+} from './assets/js/songsInfo.js';
+
 // -------------- musics -------------- //
 
 const kasabian = new Audio('assets/audio/Kasabian - Bumblebee.mp3');
@@ -24,8 +30,21 @@ function prevSong() {
         songNumber = 4;
     };
     album.src = covers[songNumber];
+    backImage.src = covers[songNumber];
     bandTitle.textContent = bandNames[songNumber];
     songTitle.textContent = songNames[songNumber];
+    infoText.innerHTML = infoSongs[songNumber];
+    infoLyrics.innerHTML = infoSongsLyrics[songNumber];
+
+    let fullTime = songs[songNumber].duration;
+    let fullMin = Math.trunc(fullTime / 60);
+    let fullSec = Math.trunc(fullTime % 60);
+    if (fullSec < 10) {
+        durationSpan.innerHTML = `${fullMin}:0${fullSec}`;
+    } else {
+    durationSpan.innerHTML = `${fullMin}:${fullSec}`;
+    }
+
     play(songNumber);
 }
 
@@ -37,8 +56,11 @@ function nextSong() {
         songNumber = 0;
     }
     album.src = covers[songNumber];
+    backImage.src = covers[songNumber];
     bandTitle.textContent = bandNames[songNumber];
     songTitle.textContent = songNames[songNumber];
+    infoText.innerHTML = infoSongs[songNumber];
+    infoLyrics.innerHTML = infoSongsLyrics[songNumber];
 
     let fullTime = songs[songNumber].duration;
     let fullMin = Math.trunc(fullTime / 60);
@@ -88,6 +110,8 @@ function progressUpdate() {
     } else {
     currentSpan.innerHTML = `${currMin}:${currSec}`;
     }
+
+    // audioProgress.style.width = `${310 * currTime / fullTime}px`;
 }
 
 function changePlace() {
@@ -115,6 +139,10 @@ const infoCloseButton = document.querySelector('.info-close');
 const progress = document.querySelector('.progress-bar');
 const durationSpan = document.querySelector('.duration');
 const currentSpan = document.querySelector('.current');
+const infoText = document.querySelector('.info-song-text');
+const infoLyrics = document.querySelector('.info-song-lyrics');
+// const audioProgress = document.querySelector('.audio-progress');
+const backImage = document.querySelector('.background-image');
 
 playButton.addEventListener('click', play);
 prevButton.addEventListener('click', prevSong);
@@ -123,5 +151,3 @@ volume.addEventListener('input', volumeChange);
 infoButton.addEventListener('click', infoSong);
 progress.addEventListener('click', changePlace);
 infoCloseButton.addEventListener('click', infoSong);
-
-// -------------- songs info -------------- //

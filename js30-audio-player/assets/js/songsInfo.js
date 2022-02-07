@@ -22,14 +22,13 @@ Sometimes<br>
 I feel it comin’ on at the wheel<br>
 Distraction<br>
 Is the only thing keeping me sealed from breaking<br>
-[Chorus]<br>
+<br>
 I just need something<br>
 To get me through the night, oh<br>
 A new obsession<br>
 Something to hold in my sights<br>
 (Something to behold in my sights)<br>
 <br>
-[Outro]<br>
 I just need something<br>
 To get me through the night, oh<br>
 A new obsession<br>
@@ -262,3 +261,7 @@ Ready for action baby`
 
 const infoSongs = [kasabianInfo, joywaveInfo, pumarosaInfo, districtsInfo, whlungInfo];
 const infoSongsLyrics = [kasabianLyrics, joywaveLyrics, pumarosaLyrics, districtsLyrics, whlungLyrics];
+
+export {
+    infoSongs, infoSongsLyrics
+};

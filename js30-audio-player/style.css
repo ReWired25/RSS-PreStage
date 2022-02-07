@@ -13,6 +13,14 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    filter: blur(20px);
 }
 
 /* ----------- player ----------- */
@@ -67,8 +75,9 @@
     padding-bottom: 10px;
 }
 
-.info-song-text {
+.info-song-lyrics {
     text-align: left;
+    font-size: 17px;
 }
 
 .album-cover {
@@ -120,7 +129,7 @@
     top: -60px;
     height: 5px;
     border-radius: 10px;
-    background: #d3d3d3;
+    background: rgb(92, 92, 92);
     transform: rotate(-90deg);
     transition: 0.7s;
 }
@@ -158,7 +167,7 @@
 
 .song-bar {
     position: relative;
-    width: 300px;
+    width: 310px;
     margin: 0px 0px 10px 45px;
 }
 
@@ -169,23 +178,33 @@
     height: 7px;
     width: 310px;
     border-radius: 10px;
-    background: #a09f9f;
+    background: rgb(92, 92, 92);
 }
 
 .progress-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 10px;
+    z-index: 10;
     border-radius: 3px;
     border: 1px solid rgb(51, 51, 51);
     background: rgb(139, 206, 39);
     cursor: pointer;
 }
 
+.audio-progress {
+    position: absolute;
+    height: 7px;
+    border-radius: 10px;
+    top: 7px;
+    background: rgb(139, 206, 39);
+}
+
 .current {
     position: absolute;
     font-size: 15px;
     color: rgb(139, 206, 39);
+    top: 15px;
     left: 0;
 }
 
@@ -193,7 +212,8 @@
     position: absolute;
     font-size: 15px;
     color: rgb(139, 206, 39);
-    right: -10px;
+    top: 15px;
+    right: 0px;
 }
 
 /* .progress-bar::-webkit-slider-runnable-track {
@@ -231,14 +251,17 @@ button {
 footer {
     position: absolute;
     width: 100%;
+    height: 50px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .footer-github, .year {
     text-decoration: none;
-    color: rgb(138, 204, 39);
+    color: rgb(139, 206, 39);
     font-size: 20px;
 }
 
@@ -246,6 +269,6 @@ footer {
     background-image: url(assets/svg/rs_school_js.svg);
     background-repeat: no-repeat;
     width: 70px;
-    height: 40px;
+    height: 25px;
     filter: invert(81%) sepia(20%) saturate(1531%) hue-rotate(32deg) brightness(89%) contrast(92%);
 }
