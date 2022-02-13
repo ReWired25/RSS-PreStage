@@ -21,6 +21,13 @@ fetch('https://api.unsplash.com/photos/random?&count=12&client_id=KePj_Sn9PZ1NgF
 
 // ---------------------- functions, listeners ---------------------- //
 
+allPhotos.addEventListener('click', () => {
+    if (event.target.classList.contains('images') || event.target.classList.contains('big-photo')) {
+        bigPhoto.classList.toggle('active');
+        bigPhoto.src = event.target.src;
+    }
+})
+
 function loadImage(images) {
     evenPhoto.forEach( (item, index) => {
         item.src = images[index].urls.raw + `${`&w=1920&h=1080`}`;
@@ -48,12 +55,11 @@ function toOpen() {
     infoUnsplash.classList.toggle('open');
 }
 
-allPhotos.addEventListener('click', () => {
-    if (event.target.classList.contains('images') || event.target.classList.contains('big-photo')) {
-        bigPhoto.classList.toggle('active');
-        bigPhoto.src = event.target.src;
-    }
-})
+window.addEventListener('onload', setTimeout( () => {
+    evenPhoto.forEach(item => {
+        item.classList.add('load');
+    })
+}, 300));
 
 // ---------------------- classic fetch functions ---------------------- //
 

@@ -13,6 +13,7 @@ body {
 }
 
 .wrapper {
+    margin: 0 auto;
     padding: 50px;
     max-width: 1440px;
     height: 100vh;
@@ -21,6 +22,7 @@ body {
 /* //////////////// title, search //////////////// */
 
 .lead-title {
+    position: relative;
     font-size: 40px;
     width: 550px;
     margin: 0 auto;
@@ -30,12 +32,20 @@ body {
     color: #1ed760;
     text-shadow: 0px 0px 3px #1ed760;
     line-height: 70px;
-    background-image: url(svg/logo-unsplash.svg);
-    background-repeat: no-repeat;
-    background-position: 70px 10px;
-    background-size: 50px 50px;
-    filter: invert(57%) sepia(60%) saturate(613%) hue-rotate(89deg) brightness(104%) contrast(89%);
+}
 
+.general-logo {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    top: 10px;
+    left: 65px;
+    filter: invert(57%) sepia(60%) saturate(613%) hue-rotate(89deg) brightness(104%) contrast(89%);
+    transition: 0.7s;
+}
+
+.general-logo:hover {
+    transform: scale(1.2);
 }
 
 .lines {
@@ -164,11 +174,18 @@ body {
     gap: 10px;
 }
 
+.images.load {
+    opacity: 1;
+    transition: 0.5s;
+}
+
 .images {
+    opacity: 0;
     width: 300px;
     height: 300px;
     object-fit: cover;
     cursor: zoom-in;
+    transition: 0.5s;
 }
 
 .big-photo {
@@ -212,16 +229,91 @@ footer {
 
 .rs-svg {
     width: 70px;
-    height: 25px;
+    height: 30px;
 }
 
 .rs-link {
     width: 70px;
-    height: 25px;
+    height: 30px;
     transition: 0.5s;
 }
 
 .github-link:hover,
 .rs-link:hover {
     transform: scale(1.15);
+}
+
+/* //////////////// adaptive //////////////// */
+
+@media (max-width: 700px) {
+    .lead-title {
+        font-size: 25px;
+        width: 300px;
+        padding-left: 40px;
+    }
+
+    .general-logo {
+        width: 40px;
+        height: 40px;
+        top: 15px;
+        left: -10px;
+    }
+
+    .input-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .info-button {
+        margin-left: 0;
+    }
+
+    .general-search {
+        margin-left: 10px;
+        max-width: 150px;
+    }
+
+    .general-button {
+        margin-left: 10px;
+        min-width: 50px;
+    }
+
+    footer {
+        justify-content: space-around;
+    }
+
+    .footer-year {
+        margin-left: 0px;
+    }
+
+    .github-link,
+    .footer-year {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .images {
+        width: 250px;
+        height: 250px;
+    }
+
+    .lead-title {
+        font-size: 20px;
+        width: 230px;
+        padding-left: 20px;
+    }
+
+    .general-logo {
+        width: 30px;
+        height: 30px;
+        top: 20px;
+        left: -15px;
+    }
+
+    footer {
+        justify-content: space-between;
+    }
 }
