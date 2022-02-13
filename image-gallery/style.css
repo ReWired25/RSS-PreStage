@@ -245,6 +245,12 @@ footer {
 
 /* //////////////// adaptive //////////////// */
 
+@media (max-width: 1000px) {
+    .info-unsplash {
+        height: 400px;
+    }
+}
+
 @media (max-width: 700px) {
     .lead-title {
         font-size: 25px;
@@ -264,6 +270,12 @@ footer {
         display: flex;
         justify-content: center;
         gap: 10px;
+    }
+
+    .info-unsplash {
+        width: 90vw;
+        font-size: 20px;
+        height: 450px;
     }
 
     .info-button {
