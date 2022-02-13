@@ -35,14 +35,14 @@ function loadImage(images) {
 }
 
 generalButton.addEventListener('click', async () => {
-        const response = await fetch(`https://api.unsplash.com/search/photos?query=${generalSearch.value}&per_page=12&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`);
+        const response = await fetch(`https://api.unsplash.com/search/photos?query=${generalSearch.value}&per_page=12&client_id=KePj_Sn9PZ1NgFSekKlRNQPgmu9pdKqxp3hDsFrTPUM`);
         const result = await response.json();
         loadImage(result['results']);
 })
 
 generalSearch.addEventListener('keyup', async (item) => {
     if (item.keyCode === 13) {
-        const response = await fetch(`https://api.unsplash.com/search/photos?query=${generalSearch.value}&per_page=12&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`);
+        const response = await fetch(`https://api.unsplash.com/search/photos?query=${generalSearch.value}&per_page=12&client_id=KePj_Sn9PZ1NgFSekKlRNQPgmu9pdKqxp3hDsFrTPUM`);
         const result = await response.json();
         loadImage(result['results']);
     }
@@ -64,7 +64,7 @@ setTimeout(() => {
 // ---------------------- classic fetch functions ---------------------- //
 
 // generalButton.addEventListener('click', () => {
-//     fetch(`https://api.unsplash.com/search/photos?query=${generalSearch.value}&per_page=12&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`).then((response) => {
+//     fetch(`https://api.unsplash.com/search/photos?query=${generalSearch.value}&per_page=12&client_id=KePj_Sn9PZ1NgFSekKlRNQPgmu9pdKqxp3hDsFrTPUM`).then((response) => {
 //     response.json().then((result) => {
 //         loadImage(result['results']);
 //         })
@@ -73,7 +73,7 @@ setTimeout(() => {
 
 // generalSearch.addEventListener('keyup', (item) => {
 //     if (item.keyCode === 13) {
-//         fetch(`https://api.unsplash.com/search/photos?query=${generalSearch.value}&per_page=12&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`).then((response) => {
+//         fetch(`https://api.unsplash.com/search/photos?query=${generalSearch.value}&per_page=12&client_id=KePj_Sn9PZ1NgFSekKlRNQPgmu9pdKqxp3hDsFrTPUM`).then((response) => {
 //             response.json().then((result) => {
 //             loadImage(result['results']);
 //             })
