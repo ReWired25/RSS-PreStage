@@ -9,6 +9,9 @@ let modalResult = document.querySelector('.modal-result');
 let resultButton = document.querySelector('.result-button');
 let resultText = document.querySelector('.result-text');
 
+let selectX = document.querySelector('.select-x');
+let select0 = document.querySelector('.select-0');
+
 let footerGit = document.querySelector('.github-logo');
 let footerRs = document.querySelector('.rs-link');
 let themeButton = document.querySelector('.dark-light');
@@ -18,6 +21,7 @@ let winX = 0;
 let win0 = 0;
 let drawCount = 0;
 let darkOrLight = 0;
+let select = 1;
 
 // *************** local get function *************** //
 
@@ -84,7 +88,11 @@ function clearField() {
     cells.forEach(item => {
         item.innerHTML = '';
     })
-    count = 0;
+    if (select === 0) {
+        count = 1;
+    } else {
+        count = 0;
+    }
 }
 
 // *************** equal array function *************** //
@@ -113,15 +121,30 @@ let fullArr = [
     [2, 4, 6]
 ];
 
-// *************** result listener *************** //
+// *************** result, select listeners *************** //
 
 resultButton.addEventListener('click', () => {
     modalResult.classList.toggle('active');
 })
 
+select0.addEventListener('click', () => {
+    select = 0;
+    count = 1;
+    selectX.classList.remove('selected');
+    select0.classList.add('selected');
+})
+
+selectX.addEventListener('click', () => {
+    select = 1;
+    count = 0;
+    select0.classList.remove('selected');
+    selectX.classList.add('selected');
+})
+
 // *************** general function of game *************** //
 
 field.addEventListener('click', () => {
+
     if (event.target.innerHTML === '') {
         if (count % 2 === 0) {
             event.target.innerHTML = 'X';
@@ -131,8 +154,6 @@ field.addEventListener('click', () => {
             count++;
         }
     }
-
-    console.log(count);
 
 // *************** logic for X *************** //
 
