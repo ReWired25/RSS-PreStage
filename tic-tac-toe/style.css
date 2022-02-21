@@ -10,30 +10,6 @@
     --borders: #cf42cf;
 }
 
-/* purple */
-
-/* :root {
-    --back: #f0f7f7;
-    --text: #481eae;
-    --borders: #f79f1a;
-} */
-
-/* green */
-
-/* :root {
-    --back: #f0f7f7;
-    --text: #077777;
-    --borders: #ffbc00;
-} */
-
-/* blue */
-
-/* :root {
-    --back: #e4e9f7;
-    --text: #464f55;
-    --borders: #4ed2fe;
-} */
-
 /* ////////// body, wrapper, header ////////// */
 
 body {
@@ -99,6 +75,10 @@ h1 {
 
 .dark-light:hover {
     transform: rotate(90deg);
+}
+
+.dark-light.light:hover {
+    transform: rotate(45deg);
 }
 
 .selects {
