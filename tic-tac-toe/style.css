@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    margin: 50px;
+}
+
+p {
+    font-size: 25px;
+}
+
+.field-style {
+    width: 345px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 115px;
+    height: 100px;
+    font-size: 50px;
+    background: rgb(170, 255, 0);
+    border: 1px solid black;
+    cursor: pointer;
+}
