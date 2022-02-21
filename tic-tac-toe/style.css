@@ -5,14 +5,39 @@
 }
 
 :root {
+    --back: #181818;
     --text: #3af750;
     --borders: #cf42cf;
 }
 
+/* purple */
+
+/* :root {
+    --back: #f0f7f7;
+    --text: #481eae;
+    --borders: #f79f1a;
+} */
+
+/* green */
+
+/* :root {
+    --back: #f0f7f7;
+    --text: #077777;
+    --borders: #ffbc00;
+} */
+
+/* blue */
+
+/* :root {
+    --back: #e4e9f7;
+    --text: #464f55;
+    --borders: #4ed2fe;
+} */
+
 /* ////////// body, wrapper, header ////////// */
 
 body {
-    background: #181818;
+    background: var(--back);
 }
 
 .wrapper {
@@ -20,6 +45,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    min-width: 770px;
 }
 
 h1 {
@@ -32,7 +58,7 @@ h1 {
 
 .text-line {
     background-color: var(--text);
-    border-color: #3af750;
+    border-color: var(--text);
     width: 150px;
     margin: 0 auto;
 }
@@ -56,6 +82,23 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+.dark-light {
+    width: 50px;
+    height: 50px;
+    background-image: url(svg/sun_icon_green.svg);
+    background-size: 50px 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.dark-light.light {
+    background-image: url(svg/moon_icon_purple.svg);
+}
+
+.dark-light:hover {
+    transform: rotate(90deg);
 }
 
 .selects {
@@ -151,6 +194,10 @@ footer {
     background-size: 80px 30px;
     background-repeat: no-repeat;
     transition: 0.5s;
+}
+
+.rs-link.light {
+    background-image: url(svg/rs_school_js_light.svg);
 }
 
 .rs-link:hover {

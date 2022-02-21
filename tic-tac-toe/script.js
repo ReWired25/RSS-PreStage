@@ -4,11 +4,14 @@ let cells = document.querySelectorAll('.cell');
 let scoreX = document.querySelector('.score-x');
 let score0 = document.querySelector('.score-0');
 let scoreDraw = document.querySelector('.score-draw');
+let footerGit = document.querySelector('.github-logo');
 
 let count = 0;
 let winX = 0;
 let win0 = 0;
 let drawCount = 0;
+
+// document.documentElement.style.setProperty('--text', '#10e8ea');
 
 // *************** local get function *************** //
 
@@ -39,6 +42,7 @@ function clearField() {
     cells.forEach(item => {
         item.innerHTML = '';
     })
+    count = 0;
 }
 
 // *************** equal array function *************** //
@@ -80,6 +84,8 @@ field.addEventListener('click', () => {
         }
     }
 
+    console.log(count);
+
 // *************** logic for X *************** //
 
     let arrX = [];
@@ -94,7 +100,6 @@ field.addEventListener('click', () => {
         if (equalArr(key, arrX)) {
             console.log('///// Победили X /////')
             clearField();
-            count = 0;
             winX++;
             console.log(`Счёт иксов: ${winX}`);
             localStorage.setItem('winX', winX);
@@ -116,7 +121,6 @@ field.addEventListener('click', () => {
         if (equalArr(key, arr0)) {
             console.log('///// Победили 0 /////')
             clearField();
-            count = 0;
             win0++;
             console.log(`Счёт нулей: ${win0}`);
             localStorage.setItem('win0', win0);
@@ -138,6 +142,7 @@ field.addEventListener('click', () => {
 
     if (draw()) {
         console.log('///// Ничья! /////');
+        clearField();
         drawCount++;
         localStorage.setItem('drawCount', drawCount);
         scoreDraw.innerHTML = `Draw: ${drawCount}`;
