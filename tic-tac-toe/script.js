@@ -18,17 +18,17 @@ window.addEventListener('load', () => {
     let localDraw = localStorage.getItem('drawCount');
 
     if (localX) {
-        scoreX.innerHTML = `Счёт крестов: ${localX}`;
+        scoreX.innerHTML = `X win: ${localX}`;
         winX = +localX;
     }
 
     if (local0) {
-        score0.innerHTML = `Счёт нулей: ${local0}`;
+        score0.innerHTML = `0 win: ${local0}`;
         win0 = +local0;
     }
 
     if (localDraw) {
-        scoreDraw.innerHTML = `Ничья: ${localDraw}`;
+        scoreDraw.innerHTML = `Draw: ${localDraw}`;
         drawCount = +localDraw;
     }
 })
@@ -98,7 +98,7 @@ field.addEventListener('click', () => {
             winX++;
             console.log(`Счёт иксов: ${winX}`);
             localStorage.setItem('winX', winX);
-            scoreX.innerHTML = `Счёт крестов: ${winX}`
+            scoreX.innerHTML = `X win: ${winX}`
         }
     }
 
@@ -120,7 +120,7 @@ field.addEventListener('click', () => {
             win0++;
             console.log(`Счёт нулей: ${win0}`);
             localStorage.setItem('win0', win0);
-            score0.innerHTML = `Счёт нулей: ${win0}`
+            score0.innerHTML = `0 win: ${win0}`
         }
     }
 
@@ -140,7 +140,7 @@ field.addEventListener('click', () => {
         console.log('///// Ничья! /////');
         drawCount++;
         localStorage.setItem('drawCount', drawCount);
-        scoreDraw.innerHTML = `Ничья: ${drawCount}`;
+        scoreDraw.innerHTML = `Draw: ${drawCount}`;
         for (let key of cells) {
             key.innerHTML = '';
         }
