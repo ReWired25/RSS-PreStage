@@ -5,6 +5,10 @@ let scoreX = document.querySelector('.score-x');
 let score0 = document.querySelector('.score-0');
 let scoreDraw = document.querySelector('.score-draw');
 
+let modalResult = document.querySelector('.modal-result');
+let resultButton = document.querySelector('.result-button');
+let resultText = document.querySelector('.result-text');
+
 let footerGit = document.querySelector('.github-logo');
 let footerRs = document.querySelector('.rs-link');
 let themeButton = document.querySelector('.dark-light');
@@ -109,6 +113,12 @@ let fullArr = [
     [2, 4, 6]
 ];
 
+// *************** result listener *************** //
+
+resultButton.addEventListener('click', () => {
+    modalResult.classList.toggle('active');
+})
+
 // *************** general function of game *************** //
 
 field.addEventListener('click', () => {
@@ -136,10 +146,10 @@ field.addEventListener('click', () => {
 
     for (let key of fullArr) {
         if (equalArr(key, arrX)) {
-            console.log('///// Победили X /////')
+            modalResult.classList.toggle('active');
+            resultText.innerHTML = 'Wow, X won!'
             clearField();
             winX++;
-            console.log(`Счёт иксов: ${winX}`);
             localStorage.setItem('winX', winX);
             scoreX.innerHTML = `X win: ${winX}`
         }
@@ -157,10 +167,10 @@ field.addEventListener('click', () => {
 
     for (let key of fullArr) {
         if (equalArr(key, arr0)) {
-            console.log('///// Победили 0 /////')
+            modalResult.classList.toggle('active');
+            resultText.innerHTML = 'Wow, 0 won!'
             clearField();
             win0++;
-            console.log(`Счёт нулей: ${win0}`);
             localStorage.setItem('win0', win0);
             score0.innerHTML = `0 win: ${win0}`
         }
@@ -179,7 +189,8 @@ field.addEventListener('click', () => {
     }
 
     if (draw()) {
-        console.log('///// Ничья! /////');
+        modalResult.classList.toggle('active');
+        resultText.innerHTML = `Well, it's a draw!`;
         clearField();
         drawCount++;
         localStorage.setItem('drawCount', drawCount);
@@ -193,9 +204,3 @@ field.addEventListener('click', () => {
 })
 
 //
-
-for (let keys of fullArr) {
-    console.log(keys);          // здесь мы обращаемся к каждому подмассиву
-}
-
-console.log(cells);
