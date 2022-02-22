@@ -24,8 +24,9 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
+    min-height: 550px;
     overflow: hidden;
-    min-width: 770px;
+    min-width: 775px;
 }
 
 h1 {
@@ -318,4 +319,91 @@ footer {
 
 .rs-link:hover {
     transform: scale(1.2);
+}
+
+@media (max-width: 775px) {
+    .field-style {
+        width: 270px;
+        height: 255px;
+    }
+
+    .wrapper {
+        overflow: auto;
+        min-width: 300px;
+    }
+
+    .game-wrapper {
+        position: relative;
+        margin: 25px 0;
+        display: flex;
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .cell {
+        width: 88px;
+        height: 83px;
+    }
+
+    .modal-scoreboard {
+        width: 290px;
+        height: 400px;
+    }
+
+    .modal-scoreboard.active {
+        top: 10%;
+    }
+    
+    .scoreboard-item {
+        padding-left: 20px;
+        font-size: 25px;
+        line-height: 1.1;
+        color: var(--text);
+    }
+
+    .settings {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .select-x,
+    .select-0 {
+        margin: 10px 0;
+        font-size: 50px;
+        line-height: 1;
+    }
+
+    .score {
+        margin-top: 15px;
+        font-size: 30px;
+    }
+
+    footer {
+        bottom: auto;
+        height: 50px;
+        font-size: 15px;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .github-link {
+        font-size: 17px;
+        margin-left: 20px;
+        padding-top: 5px;
+    }
+
+    .year {
+        margin-left: 5px;
+    }
+
+    .rs-link {
+        margin-left: 10px;
+    }
+
+    .github-logo {
+        width: 25px;
+        height: 25px;
+        left: -30px;
+        top: 0;
+    }
 }
