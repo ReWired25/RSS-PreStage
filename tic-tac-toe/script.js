@@ -8,6 +8,7 @@ let scoreDraw = document.querySelector('.score-draw');
 let modalResult = document.querySelector('.modal-result');
 let resultButton = document.querySelector('.result-button');
 let resultText = document.querySelector('.result-text');
+let resultCount = document.querySelector('.result-count');
 
 let scoreboardButton = document.querySelector('.scoreboard-button');
 let modalScoreboard = document.querySelector('.modal-scoreboard');
@@ -100,11 +101,7 @@ function clearField() {
     cells.forEach(item => {
         item.innerHTML = '';
     })
-    if (select === 0) {
-        count = 1;
-    } else {
-        count = 0;
-    }
+    count = 0;
 }
 
 // *************** equal array function *************** //
@@ -141,17 +138,27 @@ resultButton.addEventListener('click', () => {
 
 select0.addEventListener('click', () => {
     select = 0;
-    count = 1;
     selectX.classList.remove('selected');
     select0.classList.add('selected');
 })
 
 selectX.addEventListener('click', () => {
     select = 1;
-    count = 0;
     select0.classList.remove('selected');
     selectX.classList.add('selected');
 })
+
+function firstMove(player1, player2) {
+    if (event.target.innerHTML === '') {
+        if (count % 2 === 0) {
+            event.target.innerHTML = player1;
+            count++;
+        } else {
+            event.target.innerHTML = player2;
+            count++;
+        }
+    }
+}
 
 // *************** scoreboard functional *************** //
 
@@ -164,12 +171,12 @@ toggleScoreboard.addEventListener('click', () => {
 })
 
 function scoreAdd(arg) {
-    if (arg) {
+    if (arg === 'draw' || arg === 'X' || arg === '0') {
         if (arg === 'draw') {
             scoreArr.push(`There was a draw!`);
+        } else {
+            scoreArr.push(`${arg} won in ${count} moves`);
         }
-
-        scoreArr.push(`${arg} won in ${count} moves`)
 
         if (scoreArr.length > 10) {
             scoreArr.shift();
@@ -187,14 +194,10 @@ function scoreAdd(arg) {
 
 field.addEventListener('click', () => {
 
-    if (event.target.innerHTML === '') {
-        if (count % 2 === 0) {
-            event.target.innerHTML = 'X';
-            count++;
-        } else {
-            event.target.innerHTML = '0';
-            count++;
-        }
+    if (select === 0) {
+        firstMove('0', 'X')
+    } else {
+        firstMove('X', '0')
     }
 
 // *************** logic for X *************** //
@@ -211,11 +214,12 @@ field.addEventListener('click', () => {
         if (equalArr(key, arrX)) {
             scoreAdd('X')
             modalResult.classList.toggle('active');
-            resultText.innerHTML = 'Wow, X won!'
+            resultText.innerHTML = 'Wow, X won!';
+            resultCount.innerHTML = `${count} moves!`;
             clearField();
             winX++;
             localStorage.setItem('winX', winX);
-            scoreX.innerHTML = `X win: ${winX}`
+            scoreX.innerHTML = `X win: ${winX}`;
         }
     }
 
@@ -231,13 +235,14 @@ field.addEventListener('click', () => {
 
     for (let key of fullArr) {
         if (equalArr(key, arr0)) {
-            scoreAdd('0')
+            scoreAdd('0');
             modalResult.classList.toggle('active');
-            resultText.innerHTML = 'Wow, 0 won!'
+            resultText.innerHTML = 'Wow, 0 won!';
+            resultCount.innerHTML = `${count} moves!`;
             clearField();
             win0++;
             localStorage.setItem('win0', win0);
-            score0.innerHTML = `0 win: ${win0}`
+            score0.innerHTML = `0 win: ${win0}`;
         }
     }
 
@@ -254,9 +259,10 @@ field.addEventListener('click', () => {
     }
 
     if (draw()) {
-        scoreAdd('draw')
+        scoreAdd('draw');
         modalResult.classList.toggle('active');
         resultText.innerHTML = `Well, it's a draw!`;
+        resultCount.innerHTML = `Try again!`;
         clearField();
         drawCount++;
         localStorage.setItem('drawCount', drawCount);
@@ -267,4 +273,21 @@ field.addEventListener('click', () => {
     }
 })
 
-//
+// *************** self-check *************** //
+
+console.log(`Выполненная самопроверка таска tic-tac-toe:
+
+1. Вёрстка +10
+    + реализован интерфейс игры
+    + в футере приложения есть ссылка на гитхаб, год создания приложения и ссылка на курс
+2. При кликах по игровому полю по очереди отображаются крестики и нолики. Первая фигура всегда крестик +10
+3. Игра завершается, когда три фигуры выстроились в ряд по вертикали, горизонтали или диагонали +10
+4. По окончанию игры выводится её результат - выигравшая фигура и количество ходов +10
+    + количество ходов записывается в scoreboard
+5. Результаты сохраняются в local storage. Есть таблица рекордов, в которой отображаются результаты предыдущих 10 игр +10
+6. Анимации или звуки, или настройки игры +10
+    + из настроек: фигура, которая пойдёт первой, смена темы, есть анимация кнопки в модалке + ховеры
+7. Высокое качество оформления приложения, дополнительный функционал, улучшающий качество приложения +10
+    + свой дизайн, смена темы
+
+Общая оценка за таск: 70/70`);

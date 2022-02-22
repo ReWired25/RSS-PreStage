@@ -72,11 +72,16 @@ h1 {
     top: 25%;
 }
 
-.result-text {
+.result-text,
+.result-count {
     font-size: 35px;
     color: var(--text);
     text-shadow: 0px 0px 3px var(--text);
     transform: rotate(5deg);
+}
+
+.result-count {
+    font-size: 30px;
 }
 
 .result-button {
