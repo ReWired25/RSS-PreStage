@@ -9,6 +9,11 @@ let modalResult = document.querySelector('.modal-result');
 let resultButton = document.querySelector('.result-button');
 let resultText = document.querySelector('.result-text');
 
+let scoreboardButton = document.querySelector('.scoreboard-button');
+let modalScoreboard = document.querySelector('.modal-scoreboard');
+let scoreboardItems = document.querySelectorAll('.scoreboard-item');
+let toggleScoreboard = document.querySelector('.toggle-scoreboard');
+
 let selectX = document.querySelector('.select-x');
 let select0 = document.querySelector('.select-0');
 
@@ -22,6 +27,7 @@ let win0 = 0;
 let drawCount = 0;
 let darkOrLight = 0;
 let select = 1;
+let scoreArr = [];
 
 // *************** local get function *************** //
 
@@ -30,6 +36,7 @@ window.addEventListener('load', () => {
     let local0 = localStorage.getItem('win0');
     let localDraw = localStorage.getItem('drawCount');
     let localTheme = localStorage.getItem('darkOrLight');
+    let localScore = localStorage.getItem('scoreArr');
 
     if (localX) {
         scoreX.innerHTML = `X win: ${localX}`;
@@ -50,6 +57,11 @@ window.addEventListener('load', () => {
         if (localTheme === '1') {
             changeTheme();
         }
+    }
+
+    if (localScore) {
+        scoreArr = localScore.split(',');
+        scoreAdd();
     }
 })
 
@@ -141,6 +153,36 @@ selectX.addEventListener('click', () => {
     selectX.classList.add('selected');
 })
 
+// *************** scoreboard functional *************** //
+
+scoreboardButton.addEventListener('click', () => {
+    modalScoreboard.classList.toggle('active');
+})
+
+toggleScoreboard.addEventListener('click', () => {
+    modalScoreboard.classList.toggle('active');
+})
+
+function scoreAdd(arg) {
+    if (arg) {
+        if (arg === 'draw') {
+            scoreArr.push(`There was a draw!`);
+        }
+
+        scoreArr.push(`${arg} won in ${count} moves`)
+
+        if (scoreArr.length > 10) {
+            scoreArr.shift();
+        }
+    }
+
+    for (let key in scoreArr) {
+        scoreboardItems[key].innerHTML = `${+key + 1}:&nbsp;&nbsp;&nbsp;${scoreArr[key]}`;
+    }
+
+    localStorage.setItem('scoreArr', scoreArr);
+}
+
 // *************** general function of game *************** //
 
 field.addEventListener('click', () => {
@@ -167,6 +209,7 @@ field.addEventListener('click', () => {
 
     for (let key of fullArr) {
         if (equalArr(key, arrX)) {
+            scoreAdd('X')
             modalResult.classList.toggle('active');
             resultText.innerHTML = 'Wow, X won!'
             clearField();
@@ -188,6 +231,7 @@ field.addEventListener('click', () => {
 
     for (let key of fullArr) {
         if (equalArr(key, arr0)) {
+            scoreAdd('0')
             modalResult.classList.toggle('active');
             resultText.innerHTML = 'Wow, 0 won!'
             clearField();
@@ -210,6 +254,7 @@ field.addEventListener('click', () => {
     }
 
     if (draw()) {
+        scoreAdd('draw')
         modalResult.classList.toggle('active');
         resultText.innerHTML = `Well, it's a draw!`;
         clearField();
@@ -220,8 +265,6 @@ field.addEventListener('click', () => {
             key.innerHTML = '';
         }
     }
-
-    console.log('// отсечка');
 })
 
 //
