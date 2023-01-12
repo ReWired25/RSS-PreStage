@@ -1,6 +1,6 @@
 Repo with projects for [Rolling Scopes School](https://rs.school/) front-end prestage course.
 
-* Photographer's portfolio:
+* Photographer's portfolio:  
 Layout with:
 1. Dark and light theme selection
 2. Language selection
@@ -15,7 +15,7 @@ https://rewired25.github.io/RSS-prestage/portfolio/
 Deploy:  
 https://rewired25.github.io/RSS-prestage/js30-audio-player/
 
-* Xs and Os (Tic-tac-toe) game
+* Xs and Os (Tic-tac-toe) game  
 Game with:
 1. Choosing a symbol for the first move
 2. Score and scoreboard realization
@@ -25,7 +25,7 @@ Game with:
 Deploy:
 https://rewired25.github.io/RSS-prestage/tic-tac-toe/
 
-* Image gallery:
+* Image gallery:  
 Gallery with:
 1. Official Unsplash gallery API
 2. Adaptive design  
